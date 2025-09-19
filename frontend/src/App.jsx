@@ -18,7 +18,7 @@ function App() {
 
     if (editingId) {
       await axios.put(`https://api.lthtitan.online/api/items/${editingId}`, form);
-      setEditingId(null); // stop editing
+      setEditingId(null);
     } else {
       await axios.post("https://api.lthtitan.online/api/items", form);
     }
