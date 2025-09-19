@@ -4,6 +4,9 @@ services:
   backend:
     image: tenghuy/app-backend:1.0
     container_name: backend
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     restart: always
     env_file:
       - ./backend/.env
