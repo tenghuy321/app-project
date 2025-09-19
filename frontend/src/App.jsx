@@ -9,7 +9,7 @@ function App() {
   useEffect(() => { fetchItems(); }, []);
 
   const fetchItems = async () => {
-    const res = await axios.get("http://localhost:5000/api/items");
+    const res = await axios.get("https://api.lthtitan.online/api/items");
     setItems(res.data);
   };
 
@@ -17,10 +17,10 @@ function App() {
     e.preventDefault();
 
     if (editingId) {
-      await axios.put(`http://localhost:5000/api/items/${editingId}`, form);
+      await axios.put(`https://api.lthtitan.online/api/items/${editingId}`, form);
       setEditingId(null); // stop editing
     } else {
-      await axios.post("http://localhost:5000/api/items", form);
+      await axios.post("https://api.lthtitan.online/api/items", form);
     }
 
     setForm({ name: "", description: "" });
@@ -28,7 +28,7 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/items/${id}`);
+    await axios.delete(`https://api.lthtitan.online/api/items/${id}`);
     fetchItems();
   };
 

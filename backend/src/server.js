@@ -7,7 +7,10 @@ dotenv.config(); // MUST be at the very top
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://demo.lthtitan.online",
+  credentials: true,
+}));
 app.use(express.json());
 
 // Debug: check if environment variable is loaded
