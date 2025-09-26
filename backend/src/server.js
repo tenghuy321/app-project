@@ -4,17 +4,16 @@ import cors from "cors";
 import dotenv from "dotenv";
 import itemRoutes from "./routes/itemRoutes.js";
 
-dotenv.config(); // MUST be at the very top
+dotenv.config();
 
 const app = express();
 
 app.use(cors({
-  origin: "https://demo.lthtitan.online",  // frontend domain
+  origin: "https://demo.lthtitan.online",  
   credentials: true,
 }))
 app.use(express.json());
 
-// Debug: check if environment variable is loaded
 console.log("Mongo URI:", process.env.MONGO_URI);
 
 mongoose.connect(process.env.MONGO_URI, {
