@@ -8,10 +8,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: "https://demo.lthtitan.online",  
-  credentials: true,
-}))
+app.use(cors());
 app.use(express.json());
 
 console.log("Mongo URI:", process.env.MONGO_URI);

@@ -16,7 +16,7 @@ services:
       - app-network
 
   frontend:
-    image: tenghuy/app-frontend:1.4
+    image: tenghuy/app-frontend:1.2
     container_name: frontend
     restart: always
     ports:
